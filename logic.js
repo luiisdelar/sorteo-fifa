@@ -29,19 +29,42 @@ function volver(){
 
     $('.row-1').append(
         $('<div>',{
-            'class': 'col-3 form-group',
+            'class': 'col-3',
             'data-aos': 'fade-up',
         }).append(
-            $('<label>',{
-                'class': 'text-center',
-                'text': 'Número de Jugadores:'
-            }),
-            $('<input>',{
-                'id': 'jugadores',
-                'class': 'form-control',
-                'type': 'number',
-                'placeholder': 'número de jugadores'
-            })
+            $('<div>',{
+                'class': 'form-group'
+            }).append(
+                $('<label>',{
+                    'text': 'Número de Jugadores'
+                }),
+                $('<input>',{
+                    'id': 'jugadores',
+                    'class': 'form-control',
+                    'type': 'number',
+                    'placeholder': 'número de jugadores'
+                })
+            ),
+            $('<div>',{
+                'class': 'form-group'
+            }).append(
+                $('<label>',{
+                    'text': 'Formato'
+                }),
+                $('<select>',{
+                    'id': 'formato',
+                    'class': 'form-control'
+                }).append(
+                    $('<option>',{
+                        'value': '8',
+                        'text': 'Octavos de final'
+                    }),
+                    $('<option>',{
+                        'value': '4',
+                        'text': 'Cuartos de final'
+                    })
+                )
+            )
         )
     );
 
@@ -174,7 +197,6 @@ function sortear(jugadores) {
             if(document.getElementById('numEquipos'+(i+1)).value == 1){
                 
                 do{
-                    
                     num=Math.round(Math.random()*(7-0)+0);
                     
                     if(num>=0 && num<4 && leftKey[num]==null){
@@ -185,7 +207,6 @@ function sortear(jugadores) {
                         rightKey[num-4]=document.getElementById('jugador'+(i+1)).value;
                         num=-1;
                     }
-
                 }while(num!=-1);
 
             }

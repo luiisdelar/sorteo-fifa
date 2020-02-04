@@ -20,14 +20,26 @@
     <div class="container">
     
         <div class="row justify-content-center mt-5 row-1" data-aos="fade-up">
-            <div class="col-3 form-group">
-                <label class="text-center">Número de Jugadores:</label>    
-                <input id="jugadores" class="form-control" type="number" placeholder="número de jugadores">                
+            <div class="col-3">
+
+                <div class="form-group">
+                    <label>Número de Jugadores</label>    
+                    <input id="jugadores" class="form-control" type="number" placeholder="número de jugadores">                
+                </div>
+            
+                <div class="form-group">
+                    <label>Formato</label>    
+                    <select id="formato" class="form-control">
+                        <option value="8">Octavos de final</option>
+                        <option value="4">Cuartos de final</option>
+                    </select> 
+     
+                </div>
             </div> 
         </div>
 
         <div class="row justify-content-center row-2" data-aos="fade-up">
-            <div class="col-3">
+            <div class="col-3 form-group">
                 <button class="btn btn-secondary form-control" onclick="datos()">Siguiente</button>
             </div>
         </div>
